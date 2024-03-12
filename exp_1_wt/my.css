@@ -1,0 +1,26 @@
+p{
+color: brown;
+font-style:italic;
+}
+
+li{
+color: green;
+font-style:italic;
+}
+
+body
+{
+
+background-image:url("bg.jpg");
+background-repeat:no-repeat;
+background-size:cover;
+}
+
+div{
+border: 5px outset black;
+font-family:italic;}
+
+#div1{
+border: 5px outset black;
+  text-align: center;
+background-color:lightgrey;}
