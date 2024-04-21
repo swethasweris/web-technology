@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electricity Bill Calculator</title>
+  <link rel="stylesheet" href="my.css">
+</head>
+<body>
+ 
+  <h2>Electricity Bill Calculator</h2>
+  <form id="electricityForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="purpose">Purpose of Usage:</label>
+    <select id="purpose" name="purpose" required>
+      <option value="">Select Purpose</option>
+      <option value="domestic">Domestic (small shops, bakery, cafe, hotels)</option>
+      <option value="personal business">Personal Business (private schools, banks, malls, department stores)</option>
+      <option value="household">Household (general household)</option>
+      <option value="public">Public (temple fest, marriage halls)</option>
+    </select><br><br>
+
+    <label for="prevConsumption">Previous Month Consumption (units):</label>
+    <input type="number" id="prevConsumption" name="prevConsumption" required><br><br>
+
+    <label for="currentConsumption">Current Month Consumption (units):</label>
+    <input type="number" id="currentConsumption" name="currentConsumption" required><br><br>
+
+    <button type="submit">Calculate</button>
+  </form>
+
+  <div id="result" style="display:none;">
+    <h3>Electricity Bill Summary</h3>
+    <p id="outputSummary"></p>
+
+    <h3>Tariff Table</h3>
+    <table border="1">
+      <tr>
+        <th>Units</th>
+        <th>Rate (Rs.)</th>
+      </tr>
+      <tr>
+        <td>0 - 100</td>
+        <td>RS.0/- </td>
+      </tr>
+      <tr>
+        <td>101 - 200</td>
+        <td>RS.15/-</td>
+      </tr>
+      <tr>
+        <td>201 - 300</td>
+        <td>RS.20/-</td>
+      </tr>
+      <tr>
+        <td>301 - 400</td>
+        <td>RS.25/-</td>
+      </tr>
+      <tr>
+        <td>401 - 500</td>
+        <td>RS.30/-</td>
+      </tr>
+      <tr>
+        <td>501 - above</td>
+        <td>RS.40/-</td>
+      </tr>
+      
+    </table>
+  </div>
+
+  <script>
+    document.getElementById('electricityForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      valiDate();
+    });
+
+    function valiDate() {
+      var name = document.getElementById('name').value;
+      var purpose = document.getElementById('purpose').value;
+      var prevConsumption = parseInt(document.getElementById('prevConsumption').value);
+      var currentConsumption = parseInt(document.getElementById('currentConsumption').value);
+      var units=Math.abs(currentConsumption - prevConsumption);
+      var unitss=units;
+      var billAmount = 0;
+
+      if(units<=100){
+        billAmount= 0 + "<b> [first 100 units free] <b>";
+      }
+      else if (units > 100 && units<= 200) {
+        units=units-100;
+        billAmount = (100 * 10) + (units*15)+ "<b> [first 100 units free] <b>";
+      }
+      else if (units > 200 && units <= 300) {
+        units=units-200;
+        billAmount = (100 *10) +(100 *15)+(units * 20)+ "<b> [first 100 units free] <b>"; 
+      }
+      else if (units > 300 && units<= 400) {
+        units=units-300;
+        billAmount = (100 * 10) + (100 * 15) + (100* 20) +(units*25)+ "<b> [first 100 units free] <b>";
+      }
+      else if (units > 400 && units <= 500) {
+        units=units-400;
+        billAmount = (100 * 10) + (100 * 15) + (100* 20) +(100*25) + (units*30)+ "<b> [first 100 units free] <b>"; 
+      } 
+      else {
+        units=units-500;
+        billAmount = (100 * 10) + (100 * 15) + (100* 20) +(100*25) + (100 *30)+(units * 40 )+ "<b> [first 100 units free] <b>";
+        
+      }
+      var summary = "Name:" + name + "<br>" +
+                    "Purpose of Usage:   " + purpose + "<br>" +
+                    "Previous Month Consumption:" + prevConsumption + " units<br>" +
+                    "Current Month Consumption:" + currentConsumption + " units<br>" +
+                    "Units Consumed:"+ unitss + " units<br>"+
+                    "Bill Amount: Rs."+ billAmount;
+
+      document.getElementById('outputSummary').innerHTML = summary;
+
+      document.getElementById('result').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
