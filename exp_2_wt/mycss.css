@@ -1,0 +1,148 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#nv{
+    position:sticky;
+    top:0;
+    left:0;
+    z-index:100;
+    padding: .5rem 5rem;
+    box-shadow:5px 5px 20px rgba(0,0,0,.5);
+    background:brown;
+}
+
+.navbar .navbar-brand{
+    font-style: italic;
+    font-size:25px;
+    font-weight:800;
+    font-family: sans-serif;
+    color:white !important;
+}
+
+#navbarContent a{
+    color:white;
+    border-bottom: 2px solid transparent;
+}
+
+#navbarContent a:hover{
+    border-bottom:2px solid white;
+    
+
+}
+
+#navbarContent button{
+    background:black;
+    border-color: white;;
+    width: 5rem;
+    border-radius:15px;
+}
+
+section{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+/**home**/
+#home{
+    background:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1)),url(./images/sbgjpg.jpg);
+    background-size:cover;
+   
+}
+
+#home h1{
+    font-size:80px;
+    font-style:bold;
+    font-family:sans-serif;
+    color:white;
+    
+}
+
+#aboutus{
+    background-image: url(./images/bg.jpeg);
+    background-size:cover;
+}
+
+#aboutus p{
+    font-style: italic;
+    color:black;
+    font-size:25px;
+    float:left;
+    margin-left:5%;
+}
+
+#aboutus h2{
+    color:white;
+    margin-left:5%;
+}
+
+#category{
+    background-image:url(./images/ii.jpg);
+}
+
+#category h1{
+    color:burlywood;
+}
+
+.carousel-control-next{
+    right:-150px !important;
+}
+.carousel-control-prev{
+    left:-150px !important;
+}
+
+
+#service{
+    background-image:url(./images/s.png);
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+#service h1{
+    color:plum;
+}
+
+#contact{
+    background-image: url(./images/8.avif);
+    color:white;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+#contact a{
+    color:white;
+}
+
+
+.moving-words {
+    font-size: 1.5em;
+    color:white;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: moveWords 15s linear infinite;
+}
+
+
+@keyframes moveWords {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#map{
+    margin-right:15%;
+    align-items:start;
+}
