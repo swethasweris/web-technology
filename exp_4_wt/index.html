@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="my.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>STUDENT REGISTRATION FORM</h2>
+    <form name="stform" method="post" action="reg.php" >
+        <label for="rollno">ROLL NO</label>
+            <input type="text" name="rollno" id="rollno"/><br><br>
+            <p id="error1"></p>
+            
+        <label for="name">NAME</label>
+            <input type="text" name="name" id="name"/><br><br>
+            <p id="error2"></p>
+            
+
+        <label for="gender">GENDER( choose one)</label><br>
+            <input type="radio" name="gender" value="male" id="p2"/>
+            <label for="male">MALE</label><br>
+            <input type="radio" name="gender" value="female" id="p2"/>
+            <label for="female">FEMALE</label><br><br><br>
+            
+        
+        
+        <label for="programming">PROGRAMMING (select atleast one)</label><br>
+            
+            <input type="checkbox" name="programming" />
+            <label for="l1">PYTHON</label><br>
+            <input type="checkbox" name="programming" />
+            <label for="l2">JAVA</label><br>
+            <input type="checkbox" name="programming" />
+            <label for="l3">WEB TECHNOLOGY</label><br>
+            <input type="checkbox" name="programming" />
+            <label for="l4">C</label><br>
+            <input type="checkbox" name="programming" />
+            <label for="l5">C++</label><br>
+            <input type="checkbox" name="programming" />
+            <label for="l6">C++ DATA STRUCTURES</label><br><br><br>
+            
+       <label for="aoi">AREA OF INTEREST</label>
+            <select id="p3">
+        
+                <option value="" >choose any one</option>
+                <option value="DBMS" >DBMS</option>
+                <option value="ML" >ML</option>
+                <option value="NLP" >NLP</option>
+                <option value="DAA" >DAA</option>
+                <option value="OOPS" >OOPS</option>
+                <option value="DS" >DS</option>
+            </select><br><br>
+            <p id="error5"></p>
+        
+        <label for="phno">PHONE NUMBER</label>
+            <input type="text" name="phno" id="phno"/><br><br>
+            <p id="error6"></p>
+        
+        <label for="email">EMAIL-ID</label>
+            <input type="email" name="email" id="email"/><br><br>
+            <p id="error7"></p>
+        
+        <label for="password">PASSWORD</label>
+            <input type="password" name="password" id="password"/><br><br>
+            <p id="error8"></p>
+
+        <input type="submit" name="button" id="button" >
+        
+
+    </form>
+    <script>
+
+document.getElementById("button").addEventListener("click", function(event){
+          event.preventDefault()
+          valiDate();
+        });
+
+      function valiDate(){
+        var rollnofield=document.getElementById("rollno").value;
+        var namefield=document.getElementById("name").value;
+        var phnofield=document.getElementById("phno").value;
+        var mailfield=document.getElementById("email").value;
+        var passfield=document.getElementById("password").value;
+        var dropfield=document.getElementById("p3");
+       
+
+
+        var rollregex=/^[\d]{2}[\w]{6}$/;
+        var nameregex=/^[A-Za-z]{1,15}$/;
+        var phnoregex=/^[\d]{10}$/;
+        var emailregex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var passregex=/^[a-zA-Z]+[0-9]{1,}$/;
+
+        if(rollregex.test(rollnofield)){
+          document.getElementById("error1").innerHTML="";
+          document.getElementById("rollno").style.border="2px solid green";
+        }
+        else{
+          document.getElementById("error1").innerHTML="Roll no must have 2 digits followed by 3 letters of branch and number";
+          document.getElementById("error1").style.color="red";
+          document.getElementById("error1").style.visibility="visible";
+          document.getElementById("rollno").style.border="1px solid red";
+
+        }
+
+        if(nameregex.test(namefield)){
+          document.getElementById("error2").innerHTML="";
+          document.getElementById("name").style.border="2px solid green";
+        }
+        else{
+          document.getElementById("error2").innerHTML="name must only have alphabets and length must be 15";
+          document.getElementById("error2").style.color="red";
+          document.getElementById("error2").style.visibility="visible";
+          document.getElementById("name").style.border="1px solid red";
+
+        }
+
+        if(phnoregex.test(phnofield)){
+          document.getElementById("error6").innerHTML="";
+          document.getElementById("phno").style.border="2px solid green";
+        }
+        else{
+          document.getElementById("error6").innerHTML="phone number must have 10 digits";
+          document.getElementById("error6").style.color="red";
+          document.getElementById("error6").style.visibility="visible";
+          document.getElementById("phno").style.border="1px solid red";
+
+        }
+
+        if(emailregex.test(mailfield)){
+          document.getElementById("error7").innerHTML="";
+          document.getElementById("email").style.border="2px solid green";
+        }
+        else{
+          document.getElementById("error7").innerHTML="provide a valid email";
+          document.getElementById("error7").style.color="red";
+          document.getElementById("error7").style.visibility="visible";
+          document.getElementById("email").style.border="1px solid red";
+
+        }
+
+        if(passregex.test(passfield)){
+          document.getElementById("error8").innerHTML="";
+          document.getElementById("password").style.border="2px solid green";
+        }
+        else{
+          document.getElementById("error8").innerHTML="password must have combinations of alphabets followed by digits";
+          document.getElementById("error8").style.color="red";
+          document.getElementById("error8").style.visibility="visible";
+          document.getElementById("password").style.border="1px solid red";
+
+        }
+
+        if(dropfield.selectedIndex==0){
+          document.getElementById("error5").innerHTML="select any one area of interest";
+          document.getElementById("error5").style.color="red";
+          document.getElementById("error5").style.visibility="visible";
+          document.getElementById("p3").style.border="1px solid red";
+        
+      }
+      else{
+        document.getElementById("error5").innerHTML="";
+          document.getElementById("p3").style.border="2px solid green";
+
+      }
+      }
+    </script>
+    
+    
+</body>
+</html>

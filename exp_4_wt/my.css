@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image:url("form.avif");
+    background-repeat:no-repeat;
+    background-size:cover;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="password"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type="submit"]{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: blueviolet;
+    outline:none;
+    color:white;
+
+
+  }
+
+p{
+  margin-top:-30px;
+}
