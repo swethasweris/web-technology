@@ -1,0 +1,68 @@
+
+<form [formGroup]="frm" (ngSubmit)="onSubmit()">
+  <label for="firstname">firstname</label>
+  <input type="text" id="firstname" name="firstname" formControlName="firstname"><br><br>
+  @if(frm.controls['firstname'].errors?.['required']){
+   
+    <b style="color:red">please enter your firstname</b>
+  }<br>
+  <label for="lastname">lastname</label>
+  <input type="text" id="lastname" name="lastname" formControlName="lastname"><br><br>
+  @if(frm.controls['lastname'].invalid){
+   
+    <b style="color:red">Please enter only a 8 length  data</b>
+   }
+   <br>
+  <label for="gender">gender</label>
+  Male<input type="radio" id="gender" value="male" name="gender" formControlName="gender"><br>
+  Female<input type="radio" id="gender" value="female" name="gender" formControlName="gender">
+  <br/>
+  @if(frm.controls['gender'].invalid){
+   
+    <b style="color:red">Please choose your gender</b>
+  }<br>
+  <label for="email">Email </label>
+  <input type="text" id="email" name="email" formControlName="email"><br><br>
+  @if(frm.controls['email'].invalid){
+   
+    <b style="color:red">Provide a proper email</b>
+   }
+   <br>
+ <label for="city">city</label>
+  <select formControlName="city">
+    <option>bangalore</option>
+    <option>coimbatore</option>
+    <option>chennai</option>
+    <option>salem</option>
+    <option>neyveli</option>
+  </select>
+  @if(frm.controls['city'].invalid){
+   
+    <b style="color:red">please select your city</b>
+   }
+   <br><br>
+<label for="isverified">Verified the details</label>
+<input type="checkbox" id="isverified" name="isverified"
+formControlName="isverified"><br>
+@if(frm.controls['isverified'].invalid){
+   
+  <b style="color:red">agree to the checkbox to submit</b>
+ }
+ <br><br>
+
+<button type="submit" [disabled]="!frm.valid">Submit</button>
+</form>
+
+<div *ngIf="submitted" class="result-container">
+  <h2>Submitted Data</h2>
+  <p><strong>First Name:</strong> {{ frm.value.firstname }}</p>
+  <p><strong>Last Name:</strong> {{ frm.value.lastname }}</p>
+  <p><strong>email:</strong> {{ frm.value.email }}</p>
+  <p><strong>gender:</strong> {{ frm.value.gender }}</p>
+  <p><strong>city:</strong> {{ frm.value.city }}</p>
+ 
+</div>
+
+
+
+<router-outlet />

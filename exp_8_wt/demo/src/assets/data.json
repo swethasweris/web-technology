@@ -1,0 +1,32 @@
+[
+    {
+      "name": "Swetha P",
+      "registerNumber": "22ITR108",
+      "dept": "IT",
+      "cgpa":"9.14"
+    },
+    {
+        "name": "Suji K",
+        "registerNumber": "22ITR102",
+        "dept": "IT",
+        "cgpa":"7.50"
+    },
+    {
+        "name": "Reshma A",
+        "registerNumber": "22ITR085",
+        "dept": "IT",
+        "cgpa":"8.75"
+    },
+    {
+        "name": "Supriya",
+      "registerNumber": "22ITR100",
+      "dept": "IT",
+      "cgpa":"8.25"
+    },
+    {
+        "name": "Kishore J",
+      "registerNumber": "22ITR072",
+      "dept": "IT",
+      "cgpa":"8.95"
+    }
+  ]

@@ -1,0 +1,76 @@
+form {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color:white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+   
+  body{
+    background-color: pink;
+  }
+
+  form input[type="text"],
+  form input[type="radio"],
+  form input[type="checkbox"] {
+    margin-bottom: -10px;
+  }
+  
+  form input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  form input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  form b {
+    
+    font-size: 0.9em;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 1px; 
+    display: block; 
+  }
+  
+  form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
+  form button[type="submit"]:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  form .gender-label {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: normal;
+  }
+
+  div{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  }
+  

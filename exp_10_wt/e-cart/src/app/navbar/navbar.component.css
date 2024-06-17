@@ -1,0 +1,49 @@
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+  }
+  
+  li {
+    margin-right: 1rem;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  a.active {
+    font-weight: bold;}
+
+    /* Optional: Add custom styles to override Bootstrap */
+.navbar {
+    background-color:black; /* Set background color of navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth effect */
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem; /* Increase font size of brand */
+    font-weight: bold; /* Make brand bold */
+  }
+  
+  .navbar-nav .nav-item {
+    margin-right: 15px; /* Add margin between nav items */
+  }
+  
+  .nav-link {
+    color: #333; /* Set text color of nav links */
+    font-size: 1rem; /* Set font size of nav links */
+    transition: color 0.3s ease; /* Add transition for smoother hover effect */
+  }
+  
+  .nav-link:hover {
+    color:white; /* Change text color on hover */
+  }
+  
+  .active {
+    font-weight: bold; /* Make active nav item bold */
+    color:white; /* Set color of active nav item */
+  }
+  
