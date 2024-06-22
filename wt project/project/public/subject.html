@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Selection Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        header {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        .container {
+            margin-top: 50px; /* Adjust based on header height */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            padding: 20px;
+        }
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function goToForm(lab) {
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = 'form.html';
+
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'lab';
+            input.value = lab;
+
+            form.appendChild(input);
+            document.body.appendChild(form);
+            form.submit();
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Choose Your Lab!</h1>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Web Tech Lab</h2>
+        <button type="button" onclick="goToForm('web-tech')">Select Web Tech Lab</button>
+    </div>
+    <div class="card">
+        <h2>DAA Lab</h2>
+        <button type="button" onclick="goToForm('daa')">Select DAA Lab</button>
+    </div>
+    <div class="card">
+        <h2>CSD Lab</h2>
+        <button type="button" onclick="goToForm('csd')">Select CSD Lab</button>
+    </div>
+    <div class="card">
+        <h2>DBMS Lab</h2>
+        <button type="button" onclick="goToForm('dbms')">Select DBMS Lab</button>
+    </div>
+    <div class="card">
+        <h2>Python Lab</h2>
+        <button type="button" onclick="goToForm('python')">Select Python Lab</button>
+    </div>
+    <div class="card">
+        <h2>OS Lab</h2>
+        <button type="button" onclick="goToForm('operating systems')">Select operating system Lab</button>
+    </div>
+</div>
+
+</body>
+</html>

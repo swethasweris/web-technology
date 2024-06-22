@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter Marks</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    header {
+      background-color: #000;
+      color: #fff;
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+      font-size: 0.7em;
+      position: fixed;
+      top: 0;
+    }
+
+    h2 {
+      margin-top: 70px; /* Adjust based on header height */
+      color: white;
+    }
+
+    form, form#updatemarks {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 2000px;
+      width: 100%;
+      margin: 20px auto;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-left: 10px; /* Adjust spacing between buttons */
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    label, form#updatemarks {
+      margin-bottom: 8px;
+    }
+
+    input, select, option {
+      width: 100px; /* Adjust width as needed */
+      box-sizing: border-box; /* Ensure padding is included in width */
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: flex-end; /* Align buttons to the right */
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Enter Marks
+  </header>
+  <form id="submitmarks" action="/submitMarks" method="post">
+    <label for="name">Student Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="roll">Roll No:</label>
+    <input type="text" id="roll" name="roll" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="sub">Subject:</label>
+    <select id="sub" name="sub" required>
+      <option value="web tech">Web Tech</option>
+      <option value="daa">DAA</option>
+      <option value="dbms">DBMS</option>
+      <option value="python">Python</option>
+      <option value="csd">CSD</option>
+      <option value="os">OS</option>
+    </select><br><br>
+    
+    <label for="experiment">Experiment 1 No:</label>
+    <input type="number" id="experiment" name="experiment" required>
+    <label for="amarks">Aim/Procedure Marks:</label>
+    <input type="text" id="amarks" name="amarks" required>
+    <label for="cmarks">COE Marks:</label>
+    <input type="text" id="cmarks" name="cmarks" required>
+    <label for="vmarks">VIVA Marks:</label>
+    <input type="text" id="vmarks" name="vmarks" required>
+    <label for="tmarks">Total Marks:</label>
+    <input type="text" id="tmarks" name="tmarks" required><br><br>
+
+    <label for="experiment2">Experiment 2 No:</label>
+    <input type="number" id="experiment2" name="experiment2" required>
+    <label for="amarks2">Aim/Procedure Marks:</label>
+    <input type="text" id="amarks2" name="amarks2" required>
+    <label for="cmarks2">COE Marks:</label>
+    <input type="text" id="cmarks2" name="cmarks2" required>
+    <label for="vmarks2">VIVA Marks:</label>
+    <input type="text" id="vmarks2" name="vmarks2" required>
+    <label for="tmarks2">Total Marks:</label>
+    <input type="text" id="tmarks2" name="tmarks2" required><br><br>
+
+    <label for="experiment3">Experiment 3 No:</label>
+    <input type="number" id="experiment3" name="experiment3" required>
+    <label for="amarks3">Aim/Procedure Marks:</label>
+    <input type="text" id="amarks3" name="amarks3" required>
+    <label for="cmarks3">COE Marks:</label>
+    <input type="text" id="cmarks3" name="cmarks3" required>
+    <label for="vmarks3">VIVA Marks:</label>
+    <input type="text" id="vmarks3" name="vmarks3" required>
+    <label for="tmarks3">Total Marks:</label>
+    <input type="text" id="tmarks3" name="tmarks3" required><br><br>
+
+    <label for="experiment4">Experiment 4 No:</label>
+    <input type="number" id="experiment4" name="experiment4" required>
+    <label for="amarks4">Aim/Procedure Marks:</label>
+    <input type="text" id="amarks4" name="amarks4" required>
+    <label for="cmarks4">COE Marks:</label>
+    <input type="text" id="cmarks4" name="cmarks4" required>
+    <label for="vmarks4">VIVA Marks:</label>
+    <input type="text" id="vmarks4" name="vmarks4" required>
+    <label for="tmarks4">Total Marks:</label>
+    <input type="text" id="tmarks4" name="tmarks4" required><br><br>
+
+    <label for="experiment5">Experiment 5 No:</label>
+    <input type="number" id="experiment5" name="experiment5" required>
+    <label for="amarks5">Aim/Procedure Marks:</label>
+    <input type="text" id="amarks5" name="amarks5" required>
+    <label for="cmarks5">COE Marks:</label>
+    <input type="text" id="cmarks5" name="cmarks5" required>
+    <label for="vmarks5">VIVA Marks:</label>
+    <input type="text" id="vmarks5" name="vmarks5" required>
+    <label for="tmarks5">Total Marks:</label>
+    <input type="text" id="tmarks5" name="tmarks5" required><br><br>
+
+  
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div class="button-container">
+    <form id="viewmarks" action="/viewMarks" method="GET">
+      <button type="submit">View Marks</button>
+    </form>
+    <form id="updatemarks" action="/updateMarks" method="POST">
+      <label for="roll">Roll No:</label>
+    <input type="text" id="roll" name="roll" required>
+      <label for="experiment">Experiment 1 No:</label>
+    <input type="number" id="experiment" name="experiment" required>
+    <label for="amarks">Aim/Procedure Marks:</label>
+    <input type="text" id="amarks" name="amarks" required>
+    <label for="cmarks">COE Marks:</label>
+    <input type="text" id="cmarks" name="cmarks" required>
+    <label for="vmarks">VIVA Marks:</label>
+    <input type="text" id="vmarks" name="vmarks" required>
+    <label for="tmarks">Total Marks:</label>
+    <input type="text" id="tmarks" name="tmarks" required><br><br>
+      <button type="submit">Update Marks</button>
+    </form>
+    <form id="deletemarks" action="/deleteMarks" method="POST">
+      <label for="roll">Roll No:</label>
+      <input type="text" id="roll" name="roll" required>
+      <button type="submit">Delete Marks</button>
+    </form>
+  </div>
+
+  <!-- Placeholder for displaying server messages -->
+  <div id="message"></div>
+
+  <!-- Script to handle server messages -->
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const successMessage = params.get('success');
+    const errorMessage = params.get('error');
+    
+    if (successMessage) {
+      document.getElementById('message').innerHTML = `<p style="color: green;">${successMessage}</p>`;
+    }
+    if (errorMessage) {
+      document.getElementById('message').innerHTML = `<p style="color: red;">${errorMessage}</p>`;
+    }
+  </script>
+</body>
+</html>
